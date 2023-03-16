@@ -1,12 +1,12 @@
 const sendRequest = require('../js/request');
-const data = require('./jsonData/data.json');
-
+const exampleString = require('./jsonData/data');
 
 describe(`Test the XHR request`, function () {
     test("sendRequest resolves the data object if everything is fine", () => {
-        return expect(sendRequest('salv83/github-popular-repositories')).resolves.toEqual(data);
+        return expect(sendRequest('salv83/Codewars')).resolves.toEqual(exampleString);
     });
     test("sendRequest reject the status abject if there is an error", () => {
-        return expect(sendRequest('salv83/github-popular-repositories')).rejects.toEqual({status: 0, statusText: ""});
+        var errorValue =  "{\"total_count\":0,\"incomplete_results\":false,\"items\":[]}";
+        return expect(sendRequest('zhbnfdje')).resolves.toEqual(errorValue);
     });
 });

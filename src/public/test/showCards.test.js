@@ -1,4 +1,4 @@
-const showCards = require("../public/js/showCards");
+const showCards = require("../js/showCards");
 
 describe(`Test the function that produces the html for the table with all items got from GitHub API`, function () {
     it('get html for all the items', () => {

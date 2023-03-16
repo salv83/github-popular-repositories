@@ -1,4 +1,4 @@
-const singleCard = require("../public/js/singleCard");
+const singleCard = require("../js/singleCard");
 
 describe(`Test the function that produces the html for a single item got from GitHub API`, function () {
     it('produce html for a not popular repository', () => {

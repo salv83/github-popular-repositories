@@ -9,11 +9,13 @@ const sendRequest = (repo_name) => {
 
     var xhr = new XMLHttpRequest();
     xhr.open("GET", path, true);
-    xhr.withCredentials = true;
     
+    /*
+    xhr.withCredentials = true; 
     xhr.setRequestHeader("Accept", "application/vnd.github+json");
     xhr.setRequestHeader("Authorization", `token ${token}`);
     xhr.setRequestHeader("X-GitHub-Api-Version", "2022-11-28");
+    */
 
     xhr.onload = function() {
       if (this.status >= 200 && this.status < 300) {
