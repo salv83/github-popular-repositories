@@ -43,11 +43,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full lg:w-2/3 xl:w-1/2 relative z-0 px-8 lg:px-0">
+                <div class="w-full lg:w-2/3 xl:w-1/2 relative z-1 bg-gray-200 rounded shadow-lg overflow-hidden lg:h-screen">
                     <div class="bg-gray-200 text-white rounded-b lg:rounded-b-none lg:rounded-r shadow-lg overflow-hidden lg:h-screen lg:overflow-y-scroll">
                         <div class="bg-teal-700 text-lg font-medium text-white p-8 text-center border-b border-gray-200 tracking-wide">Results:</div>
                         <div class="text-center text-sm sm:text-md w-full my-8 text-blue-200 px-8">
-                           <!-- TABLE-->
+                            <table class="w-full flex flex-row flex-no-wrap rounded-lg overflow-hidden sm:shadow-lg my-5 bg-gray-200">
+                                <thead class="text-white">
+                                  <tr class="hidden sm:flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0 bg-teal-400">
+                                    <th>Profile Picture</th>
+                                    <th class="align-top p-3 text-left">Repository's Name</th>
+                                    <th class="align-top p-3 text-left">Author</th>
+                                    <th class="align-top p-3 text-left">Stars</th>
+                                    <th class="align-top p-3 text-left">Forks</th>
+                                    <th class="align-top p-3 text-left">Popular</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="repo-cards" class="flex-1 sm:flex-none">
+                                  <div class="hidden">
+                                    <span class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0 m-auto rounded-full p-4 align-middle border-grey-light border hover:bg-gray-100 text-black p-3 max-w-5rem h-auto sm:hidden font-bold"></span>Placeholder
+                                  </div>
+                                </tbody>
+                              </table>
                         </div>
                     </div>
                 </div>
