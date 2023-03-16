@@ -1,12 +1,18 @@
 'use strict';
-
-const sendRequest = require("./request");
+import submitForm from "./submitForm";
 
 document.addEventListener("DOMContentLoaded", function(event) { 
     const searchButton = document.getElementById("search-repository");
     if(searchButton){
         searchButton.addEventListener('click', function(event) {
-          sendRequest('salv83/github-popular-repositories');
+            submitForm(event);
         });
+        document.getElementById("search").addEventListener('submit', function(event) {
+            submitForm(event);
+        });
+
+        document.querySelector("#search-error span").addEventListener('click', function(event) {
+            document.getElementById("search-error").classList.add("hidden");
+        });;
 	}
 });

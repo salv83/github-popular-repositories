@@ -6,7 +6,7 @@ const sendRequest = (repo_name) => {
     const token = process.env.GITHUB_TOKEN;
     const query = `?q=${repo_name}%20in:name`;
     const path = `${baseURL}${query}`;
-console.log(path);
+
     var xhr = new XMLHttpRequest();
     xhr.open("GET", path, true);
     xhr.withCredentials = true;
@@ -17,8 +17,8 @@ console.log(path);
 
     xhr.onload = function() {
       if (this.status >= 200 && this.status < 300) {
-        console.log(xhr.response);
         resolve(xhr.response);
+        
       }
       else {
         reject({
