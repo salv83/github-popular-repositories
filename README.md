@@ -197,6 +197,7 @@ Same thing in the second case where I check if the results are empty in this cas
     {
      ....
 ```
+
 Using the pagination we can show more items.
 
 #### Live Preview
