@@ -1,15 +1,17 @@
 {
-  "name": "github-popular-repositories",
+  "name": "github-repo-client",
   "version": "1.0.0",
-  "description": "A JavaScript project",
+  "description": "Popular Github Repositories",
   "main": "./dist/index.js",
   "scripts": {
     "dev:watch-backend": "node ./node_modules/parcel-bundler/bin/cli watch ./src/index.js --target node --out-dir ./dist/",
     "dev:watch-frontend": "node ./node_modules/parcel-bundler/bin/cli watch ./src/public/index.html --out-dir ./dist/public/",
     "dev:hot-reload": "node ./node_modules/nodemon/bin/nodemon --watch ./dist/ ./dist/index.js",
-    "start": "node ./node_modules/npm-run-all/bin/npm-run-all -p -r dev:watch-backend dev:watch-frontend dev:hot-reload",
+    "start": "node-sass src/scss/style.scss src/public/css/style.css && npx tailwindcss -i ./src/scss/main.css -o ./src/public/css/output.css && cat src/public/css/* > src/public/css/main.css && node ./node_modules/npm-run-all/bin/npm-run-all -p -r dev:watch-backend dev:watch-frontend dev:hot-reload",
     "build": "node ./node_modules/parcel-bundler/bin/cli build ./src/index.js --target node --out-dir ./dist/",
-    "lint": "node ./node_modules/eslint/bin/eslint . --ext .js --fix"
+    "lint": "node ./node_modules/eslint/bin/eslint . --ext .js --fix",
+    "sass": "node-sass src/scss/style.scss  src/public/css/style.css",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -22,8 +24,14 @@
     "eslint": "^8.36.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
+    "jest": "^29.5.0",
     "nodemon": "^2.0.21",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "node-sass": "^8.0.0",
+    "tailwindcss": "^3.2.7"
   }
 }
