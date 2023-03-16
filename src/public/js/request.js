@@ -12,7 +12,7 @@ const sendRequest = (repo_name) => {
     xhr.withCredentials = true;
     
     xhr.setRequestHeader("Accept", "application/vnd.github+json");
-    xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+    xhr.setRequestHeader("Authorization", `token ${token}`);
     xhr.setRequestHeader("X-GitHub-Api-Version", "2022-11-28");
 
     xhr.onload = function() {
