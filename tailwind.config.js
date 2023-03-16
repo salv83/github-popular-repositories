@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/public/index.html"],
   theme: {
-    extend: {},
+    extend: {
+      maxWidth: {
+        '5rem': '5rem',
+      }
+    }
   },
   plugins: [],
 }
