@@ -189,7 +189,7 @@ Same thing in the second case where I check if the results are empty in this cas
 #### Possible Improvements
 - Errors management, actually is managed only the case the search return 0 items but eventually could be managed other cases for example if the API call fails 
 - Form Validation
-- Pagination, actually only 30 items are retrieved for each request, but if we check the resonse, for example if we write "javascript", are available 549994 repository. 
+- Pagination, actually only 30 items are retrieved for each request, but if we check the resonse, for example if we write "javascript", are available 549994 repositories. 
 
 ```
   "total_count": 549994,
