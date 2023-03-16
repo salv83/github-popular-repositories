@@ -1,11 +1,12 @@
 'use strict';
 
-function counter() {
-  let seconds = 0;
-  setInterval(() => {
-    seconds += 1;
-    document.getElementById('app').innerHTML = `<p>You have been here for ${seconds} seconds.</p>`;
-  }, 1000);
-}
+const sendRequest = require("./request");
 
-counter();
+document.addEventListener("DOMContentLoaded", function(event) { 
+    const searchButton = document.getElementById("search-repository");
+    if(searchButton){
+        searchButton.addEventListener('click', function(event) {
+          sendRequest('salv83/github-popular-repositories');
+        });
+	}
+});
