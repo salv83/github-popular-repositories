@@ -15,7 +15,7 @@ For this exercise, “popular repository” means one for which score >= 500 whe
 
 To retrieve information about a particular repository, use GitHub's official REST API.
 
-###Installation
+### Installation
 
 In order to run the service locally we need to perform the following commands from the root folder of the project:
 
@@ -29,7 +29,7 @@ From the browser we use the service through the following url
 
 [http://localhost:8888/](http://localhost:8888/)
 
-###Code
+### Code
 The source code is developed used plain Javascript.
 The frontend is styled using a little bit of SCSS and the classes of the framework Tailwind, I have only defined a custom class max-w-5rem inside the tailwind.config.js used to set the max-width for the avatar picture of a repository
 
@@ -47,7 +47,7 @@ module.exports = {
 }
 ```
 
-####Dependencies
+#### Dependencies
 For the production mode I have installed tailwindcss, node-sass and dotenv to use the environment variables.
 For the development mode I have installed jest 
 ```
@@ -88,7 +88,7 @@ About the authentication it looks that to perform the GET call the token we don'
     */
 ```
 
-####Frontend Description
+#### Frontend Description
 The frontend is divided in two section: 
 - the left side shows an input field where the used can insert the name of the repository to search and two buttons, the Search button to submit the request and the Clear button to clear the result of the previous search.
 - the right side shows a table with the required information
@@ -97,8 +97,8 @@ The frontend is divided in two section:
 	- Repository's stars and forks
 	- Whether a repository is popular or not
 
-####Functions Description
-####main.js
+#### Functions Description
+#### main.js
 In this file I manage the user's interaction with the frontend. When the DOM is loaded I define Event Listener
 1. this Event Listener manage the click on the search button and call the function  submitForm()
 ```
@@ -126,7 +126,7 @@ In this file I manage the user's interaction with the frontend. When the DOM is 
         });
 ```
 
-####request.js
+#### request.js
 In this file is defined the function sendRequest that build the path we have to use to execute the GET call, it load the baseURL 
 https://api.github.com/search/repositories
 from the environment variables 
@@ -139,13 +139,13 @@ then the function attaches to baseURL the query string composed by the q= parame
 ```
 Once the path is built it's executed the API call using the XMLHttpRequest object.
 
-####submitForm.js
+#### submitForm.js
 When the form is submitted the submitForm function get the value of the input field and use the sendRequest function to get the data from the API and  if the data got from the API contains more then 0 items it calls the showCards function to generate the html that render the table with the repository info. If there are 0 items it will display an error message under the form. 
 
-####showCards.js
+#### showCards.js
 showCards performs an iteration over the items got from the API call and pass each single item to the  singleCard function that generate each row of the table.
 
-####singleCard.js
+#### singleCard.js
 Given an item this function take the information  we need
 ```
     const repositoryName = item.full_name;
@@ -167,7 +167,7 @@ const isPopular = (stargazersCount, forksCount) => {
 ```
 and generate the html of each single row of the table.
 
-####Unit test
+#### Unit test
 The unit tests are located inside the folder src/public/test, and there are three test suites for the most relevant functions
 
 **singleCard.test.js**
