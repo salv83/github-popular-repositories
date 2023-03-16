@@ -22,7 +22,6 @@ const submitForm = (event) => {
             }
         });
     }
-    inputElement.value = '';
 }
 
 module.exports = submitForm;
